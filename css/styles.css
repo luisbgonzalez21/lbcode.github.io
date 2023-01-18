@@ -232,7 +232,7 @@ section {
 .left {
     width: 50%;
     height: 600px;
-    background: url(resource-database-40GiwI7nZjc-unsplash.jpg) no-repeat center / cover;
+    background: url(../resource-database-40GiwI7nZjc-unsplash.jpg) no-repeat center / cover;
     border-radius: 8px;
 }
 
@@ -249,7 +249,7 @@ section {
 }
 
 .right-img {
-    background: url(dweller_sgra-14BHYPL4AqQ-unsplash.jpg) no-repeat center / cover;
+    background: url(../dweller_sgra-14BHYPL4AqQ-unsplash.jpg) no-repeat center / cover;
     margin: 10px;
     height: 600px;
 }

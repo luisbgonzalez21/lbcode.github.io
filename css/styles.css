@@ -74,7 +74,7 @@ li a:hover {
 a .nav {
     display: block;
     padding: 8px;
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 
 #header {
@@ -94,7 +94,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #dddddd;
+    background-color: #eee;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;

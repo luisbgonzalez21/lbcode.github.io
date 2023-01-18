@@ -55,7 +55,7 @@ li:last-child {
     border-right: none;
   }
 
-li a.nav {
+li a.nav{
     display: block;
     color: #666;
     text-align: center;
@@ -67,8 +67,12 @@ li:not(.title) {
     font-size: 12px;
 }
 
-li a:hover {
+a.nav:hover {
     background-color: white;
+}
+
+.icon:hover {
+    background-color: none;
 }
 
 a .nav {
@@ -82,7 +86,7 @@ a .nav {
     top: 0;
     left: 0;
     margin: 0;
-    background-color: #bbb;
+    background-color: #fff;
 }
 
 ul {
@@ -94,7 +98,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #eee;
+    background-color: rgba(220, 201, 201, 0.163);
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
@@ -176,7 +180,7 @@ h1 a {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    background-color: #white;
+    background-color: white;
 }
 
 .text {
@@ -217,7 +221,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fddcc356;
+    background-color: #fdeadb5b;
 }
 
 .container {

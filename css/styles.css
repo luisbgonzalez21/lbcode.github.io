@@ -11,6 +11,7 @@
 body {
     font-family: 'Montserrat';
     overflow-x: hidden;
+    background-color: #fdeadb5b;
 }
 /*
 body {
@@ -193,16 +194,17 @@ header .search .fa-search {
     color: black;
     border-right: 1px solid #fff;
     padding-right: 10px;
-} */
+}
 @media only screen and (max-width: 768px) {
-    /*header{
+    header{
         flex-direction: column;
         padding: 10px; 20px;
     }
     header .search{
         width: 100%;
-    }*/
+    }
 }
+*/
 
 .flex {
     display: flex;
@@ -217,6 +219,8 @@ header .search .fa-search {
 .primary-header {
     align-items: center;
     justify-content: space-between;
+    background: #928d9f10;
+    padding-bottom: 50px;
 }
 
 .mobile-nav-toggle {
@@ -227,13 +231,12 @@ header .search .fa-search {
     list-style: none;
     padding: 0;
     margin: 0;
-
-    background: hsl(0 0% 100% / 0.5);
+    color: black;
 }
 
 @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {
-      background: hsl(0 0% 100% / 0.1);
+      background: hsl(0 0% 20% / 0.1);
       backdrop-filter: blur(1rem);
     }
 }
@@ -241,6 +244,7 @@ header .search .fa-search {
 @media (max-width: 35em) {
     .primary-navigation {
         --gap: 2em;
+        background: hsl(0 0% 100% / 0.5);
 
         position: fixed;
         z-index: 1000;
@@ -262,16 +266,21 @@ header .search .fa-search {
         position: absolute;
         z-index: 9999;
         background-color: transparent;
-        background-image: url("./hamburger-button-svgrepo-com.svg");
+        background-image: url("../bx-menu.svg");
         background-repeat: no-repeat;
         width: 2rem;
         aspect-ratio: 1;
         top: 2rem;
         right: 2rem;
+        border: 0;
     }
 
     .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url("./cross-svgrepo-com.svg");
+        background-image: url("../bx-x.svg");
+    }
+
+    .search {
+        width: 90%;
     }
 }
 
@@ -280,6 +289,7 @@ header .search .fa-search {
         display: none;
     }
     .primary-navigation {
+        --gap: clamp(3rem, 8vw, 10rem);
         padding-block: 2rem;
         padding-inline: clamp(3rem, 10vw, 10rem);
     }
@@ -287,6 +297,7 @@ header .search .fa-search {
 
 .primary-navigation a {
     text-decoration: none;
+    color: black;
 }
 
 .primary-navigation a > [aria-hidden="true"] {
@@ -294,7 +305,23 @@ header .search .fa-search {
     margin-inline-end: 0.75em;
 }
 
+.search {
+    padding-left: 5px;
+    width: 100px;
+    display: inline-block;
+    margin-right: 0;
+    background-color: white;
+    font-style: normal;
+    color: #111;
+}
 
+.search-btn {
+    color: #bbb;
+    padding: 0 5px;
+    margin-left: 0;
+    background-color: white;
+    font-style: normal;
+}
 
 .banner {
 width: 100%;
@@ -316,7 +343,7 @@ min-height: 100vh;
     align-items: center;
     justify-content: center;
     background-color: white;
-    margin: -75px 0;
+    margin: -80px 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -388,8 +415,14 @@ input, button {
 */
 .text {
     text-align: center;
-    margin: 20px auto;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+}
+
+.text p {
     max-width: 700px;
+    margin: 20px auto;
 }
 
 .text-button {
@@ -397,6 +430,7 @@ input, button {
     text-align: center;
     align-items: center;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 .text-button a {
@@ -424,7 +458,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fdeadb5b;
 }
 
 .container {
@@ -540,3 +573,35 @@ section {
     font-size: 30px;
     color: #4070f4;
 }
+
+
+
+.primary-footer {
+    align-items: center;
+    justify-content: space-between;
+    background: #928d9f3a;
+    height: 200px;
+    width: 100%;
+}
+
+.secondary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+    padding-left: 50%;
+}
+
+.secondary-navigation a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 35em) {
+    .secondary-navigation {
+        
+        z-index: 1000;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+    }

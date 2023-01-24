@@ -12,7 +12,48 @@
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
     <title>Landing Page</title>
 </head>
-<body>
+<body class="home">
+    <!--Burger Menu Responsive nav-->
+    <header class="primary-header flex">
+        <div>
+            <img src="./burger-svgrepo-com.svg" class="logo" width="65px">
+        </div>
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+        </button>
+
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+                <li class="active">
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html">
+                        <span aria-hidden="true">00</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html">
+                        <span aria-hidden="true">01</span>Burgers
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html">
+                        <span aria-hidden="true">02</span>Sides
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html">
+                        <span aria-hidden="true">03</span>Desserts
+                    </a>
+                </li>
+                <li>
+                    <input type="text" class="search" placeholder="Search">
+                    <button class="search-btn"><a href="index.html">Go</a></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<!--Responsive nav
     <header>
         <a href="#" class="logo">My Logo</a>
         <ul class="navigation">
@@ -28,6 +69,7 @@
             <i class="fa fa-search" aria-hidden="true"></i>
         </div>
     </header>
+-->
     <div class="banner">
             <img src="./ashkan-sadeghi-JmsBd0f2fIA-unsplash.jpg" alt="stock photo" class="banner-image1">
             <img src="./oksana-zub-V6WJpilwLe0-unsplash.jpg" alt="stock photo" class="banner-image2">
@@ -62,7 +104,7 @@
         <div class="tesimonial mySwiper">
             <div class="testi-content swiper-wrapper">
                 <div class="slide swiper-slide">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rhoncus auctor ex, in pulvinar ante. Integer ut tortor dictum, tempus quam ut, sodales mi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rhoncus auctor ex, in pulvinar ante.</p>
 
                     <i class="bx bxs-quote-alt-left"></i>
 
@@ -72,7 +114,7 @@
                     </div>
                 </div>
                 <div class="slide swiper-slide">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rhoncus auctor ex, in pulvinar ante. Integer ut tortor dictum, tempus quam ut, sodales mi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rhoncus auctor ex, in pulvinar ante.</p>
 
                     <i class="bx bxs-quote-alt-left"></i>
 

@@ -11,7 +11,7 @@
 body {
     font-family: 'Montserrat';
     overflow-x: hidden;
-    background-color: #fdeadb5b;
+    background-color: #ffffff;
 }
 /*
 body {
@@ -220,7 +220,7 @@ header .search .fa-search {
     align-items: center;
     justify-content: space-between;
     background: #928d9f10;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
 }
 
 .mobile-nav-toggle {
@@ -242,6 +242,9 @@ header .search .fa-search {
 }
 
 @media (max-width: 35em) {
+    .primary-header {
+        padding-bottom: 0;
+    }
     .primary-navigation {
         --gap: 2em;
         background: hsl(0 0% 100% / 0.5);
@@ -602,6 +605,7 @@ section {
         
         z-index: 1000;
 
-        flex-direction: column;
+        margin: auto;
         padding: min(30vh, 10rem) 2em;
     }
+}

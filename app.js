@@ -1,57 +1,89 @@
-(function () {
-    const customerImage = document.querySelector('#customer-img')
-    const customerName = document.querySelector('#customer-name')
-    const customerText = document.querySelector('#customer-text')
+"use strict";
 
-    const btn = document.querySelectorAll('.btn')
-    let index = 0
-    const customers = []
+//FADE 
+var fadeEl = document.querySelector('.fade');
+var hasScrolled = false;
+window.addEventListener('scroll', function () {
+  if (!hasScrolled) {
+    fadeEl.style.opacity = '0.5';
+    hasScrolled = true;
+  }
+});
 
-    function Customer(img, name, text) {
-        this.img = img
-        this.name = name
-        this.text = text
-    }
+//FILTERS
+var filtersEl = document.querySelector('.filters');
+var projectEl1 = document.querySelector('.project:nth-child(1)');
+var projectEl2 = document.querySelector('.project:nth-child(2)');
+var projectEl3 = document.querySelector('.project:nth-child(3)');
+var projectEl4 = document.querySelector('.project:nth-child(4)');
+var projectEl5 = document.querySelector('.project:nth-child(5)');
+var projectEl6 = document.querySelector('.project:nth-child(6)');
+var htmlEl = document.querySelector('html');
+filtersEl.addEventListener('click', function (e) {
+  // remove fade
+  fadeEl.style.opacity = '0';
 
-    function createCustomer(img, name, text) {
-        let Img = `./img/${img}.jpg`
-        let customer = new Customer(Img, name, text)
+  //make clicked button active
+  document.querySelector('.filter-btn--active').classList.remove('filter-btn--active');
+  e.target.classList.add('filter-btn--active');
 
-        customers.push(customer)
-    
-    }
+  // change image opacities
+  htmlEl.style.setProperty('--default-opacity', '0.4');
+  htmlEl.style.setProperty('--hover-opacity', '0.3');
 
-    createCustomer(0, 'Lauren', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reprehenderit ut ad doloribus sit exercitationem voluptatum quos. Omnis, veritatis cumque.')
-    createCustomer(1, 'John', 'Nam nunc est, commodo eget erat a, aliquam consectetur ante. Integer et diam rhoncus, eleifend velit eu, iaculis sapien. Vivamus at pretium erat. Mauris lectus enim, pellentesque id tellus a, gravida dictum magna. Etiam ac nisi eget enim volutpat hendrerit. Integer suscipit iaculis est eget tincidunt.')
-    createCustomer(2, 'Julius', 'Nulla massa risus, condimentum sit amet interdum quis, maximus laoreet ligula. Sed vitae interdum arcu, sit amet finibus tellus. Vestibulum efficitur commodo blandit. In mollis turpis at ligula varius auctor. Pellentesque sit amet augue ullamcorper felis rutrum vehicula a sed erat. Class aptent taciti sociosqu ad litora')
-    createCustomer(3, 'Pablo', 'torquent per conubia nostra, per inceptos himenaeos. Ut vitae interdum purus, nec scelerisque ligula. Vestibulum id leo erat. Integer iaculis orci lacus, eu aliquam ex porta vitae. Nulla dignissim arcu suscipit, convallis velit vitae, aliquet odio. Pellentesque interdum maximus turpis sed lobortis.')
-    createCustomer(4, 'Amy', 'Etiam vel sapien ac risus accumsan ultrices. Aenean sed magna accumsan, viverra lectus eget, sagittis mauris. Morbi arcu diam, eleifend in neque sit amet, pretium condimentum massa. Vestibulum metus mi')
-
-    btn.forEach(function(button) {
-        button.addEventListener('click', function (e) {
-            if (e.target.parentElement.classList.contains('prevBtn')) {
-                if (index === 0) {
-                    index = customers.length
-                }
-                index--
-                customerImage.src = customers[index].img;
-                customerName.textContent = customers[index].name
-                customerText.textContent = customers[index].text
-            }
-
-            if (e.target.parentElement.classList.contains('nextBtn')) {
-                index++
-                if (index === customers.length) {
-                    index = 0
-                }
-                
-                customerImage.src = customers[index].img
-                customerName.textContent = customers[index].name
-                customerText.textContent = customers[index].text
-
-            }
-        })
-
-    })
-
-})()
+  // reorganize grid
+  var filterText = e.target.textContent;
+  if (filterText === 'All') {
+    projectEl1.style.opacity = '1';
+    projectEl1.style.transform = 'scale(1)';
+    projectEl2.style.opacity = '1';
+    projectEl2.style.transform = 'scale(1)';
+    projectEl3.style.opacity = '1';
+    projectEl3.style.transform = 'scale(1)';
+    projectEl4.style.opacity = '1';
+    projectEl4.style.transform = 'scale(1)';
+    projectEl5.style.opacity = '1';
+    projectEl5.style.transform = 'scale(1)';
+    projectEl6.style.opacity = '1';
+    projectEl6.style.transform = 'scale(1)';
+  } else if (filterText === 'Front end') {
+    projectEl1.style.opacity = '0';
+    projectEl1.style.transform = 'scale(0)';
+    projectEl2.style.opacity = '0';
+    projectEl2.style.transform = 'scale(0)';
+    projectEl5.style.opacity = '0';
+    projectEl5.style.transform = 'scale(0)';
+    projectEl6.style.opacity = '0';
+    projectEl6.style.transform = 'scale(0)';
+    projectEl3.style.transform = 'translateX(-650px)';
+    projectEl3.style.opacity = '1';
+    projectEl4.style.transform = 'translate(325px, -502px)';
+    projectEl4.style.opacity = '1';
+  } else if (filterText === 'Back end') {
+    projectEl1.style.opacity = '0';
+    projectEl1.style.transform = 'scale(0)';
+    projectEl2.style.opacity = '0';
+    projectEl2.style.transform = 'scale(0)';
+    projectEl3.style.opacity = '0';
+    projectEl3.style.transform = 'scale(0)';
+    projectEl4.style.opacity = '0';
+    projectEl4.style.transform = 'scale(0)';
+    projectEl5.style.transform = 'translate(-325px, -359px)';
+    projectEl5.style.opacity = '1';
+    projectEl6.style.transform = 'translate(-325px, -501px)';
+    projectEl6.style.opacity = '1';
+  } else if (filterText === 'Full-stack') {
+    projectEl3.style.opacity = '0';
+    projectEl3.style.transform = 'scale(0)';
+    projectEl4.style.opacity = '0';
+    projectEl4.style.transform = 'scale(0)';
+    projectEl5.style.opacity = '0';
+    projectEl5.style.transform = 'scale(0)';
+    projectEl6.style.opacity = '0';
+    projectEl6.style.transform = 'scale(0)';
+    projectEl1.style.opacity = '1';
+    projectEl1.style.transform = 'scale(1)';
+    projectEl2.style.opacity = '1';
+    projectEl2.style.transform = 'scale(1)';
+  }
+});
